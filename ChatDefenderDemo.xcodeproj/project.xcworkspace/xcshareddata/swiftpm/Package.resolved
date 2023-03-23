@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Chat-Defender/OpenAISwift.git",
       "state" : {
-        "revision" : "8634e7ce95e65696b6325241d6fdfea2ef694aaa",
-        "version" : "1.2.1"
+        "revision" : "8c1e62e2b0c1848f567d86400db27d5ddf7f83d1",
+        "version" : "1.2.2"
       }
     }
   ],
