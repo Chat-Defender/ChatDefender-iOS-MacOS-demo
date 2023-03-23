@@ -8,5 +8,6 @@
 import Foundation
 
 struct Config {
+    #error("Add your Chat Defender API KEY below, then delete this line")
     static let key = "##YOUR CHAT DEFENDER API KEY##"
 }
