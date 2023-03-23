@@ -1,6 +1,7 @@
 #  Chat Defender iOS/MacOS Demo
 
 This SwiftUI app demonstrates using the Chat Defender api to proxy to openai
+
 It uses the drop-in replacement sdk for [OpenAISwift](https://github.com/Chat-Defender/OpenAISwift)
 
 Chat Defender allows you to avoid exposing your openai keys and prompts.
