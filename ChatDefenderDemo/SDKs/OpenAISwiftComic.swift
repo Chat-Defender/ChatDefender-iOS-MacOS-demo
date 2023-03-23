@@ -1,0 +1,29 @@
+//
+//  OpenAISwiftComic.swift
+//  ChatDefenderDemo
+//
+//  Created by Rob Jonson on 21/03/2023.
+//
+
+import Foundation
+import OpenAISwift
+
+struct OpenAISwiftComic {
+    static func fetchJoke(subject:String) async -> String? {
+        let openAiSwift = OpenAISwift(authToken: Config.key)
+        
+        let chat: [ChatMessage] = [
+            ChatMessage(role: .user,
+                        cd_key: "substitute_joke",
+                        cd_variables: ["subject" : subject])
+        ]
+        
+        do {
+            let result = try await openAiSwift.sendChat(with: chat)
+            return result.choices?.first?.message.content
+        } catch  {
+            print("RequestFailed: \(error)")
+            return nil
+        }   
+    }
+}
