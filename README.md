@@ -26,7 +26,7 @@ Run the app!
 
 ## How it works
 
-The relevant interaction code for OpenAISwift is in OpenAISwiftComic
+The relevant interaction code for OpenAISwift is in [OpenAISwiftComic](https://github.com/Chat-Defender/ChatDefender-iOS-MacOS-demo/blob/main/ChatDefenderDemo/SDKs/OpenAISwiftComic.swift)
 
 ```
 struct OpenAISwiftComic {
