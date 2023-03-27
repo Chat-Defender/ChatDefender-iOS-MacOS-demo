@@ -26,6 +26,7 @@
 		D424BBFD29C9C4AA006B6BF6 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		D424BC0329C9C699006B6BF6 /* OpenAISwiftComic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAISwiftComic.swift; sourceTree = "<group>"; };
 		D424BC0B29CC7B2A006B6BF6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		D4F3002029CDBB77004DDE45 /* OpenAISwift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = OpenAISwift; path = ../../Packages/OpenAISwift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +44,7 @@
 		D424BBE029C8DB51006B6BF6 = {
 			isa = PBXGroup;
 			children = (
+				D4F3002029CDBB77004DDE45 /* OpenAISwift */,
 				D424BBEB29C8DB51006B6BF6 /* ChatDefenderDemo */,
 				D424BBEA29C8DB51006B6BF6 /* Products */,
 				D424BBFF29C9C64A006B6BF6 /* Frameworks */,

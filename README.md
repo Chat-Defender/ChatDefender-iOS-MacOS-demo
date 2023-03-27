@@ -35,8 +35,9 @@ struct OpenAISwiftComic {
         
         let chat: [ChatMessage] = [
             ChatMessage(role: .user,
-                        cd_key: "substitute_joke",
-                        cd_variables: ["subject" : subject])
+                        cdContent: CDMessage(key: "substitute_joke",
+                                             variables: ["subject" : subject])
+                       )
         ]
         
         do {
