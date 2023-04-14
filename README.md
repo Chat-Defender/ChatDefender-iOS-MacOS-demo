@@ -26,6 +26,10 @@ Run the app!
 
 ## How it works
 
+The app demonstrates using the OpenAISwift and the SwiftOpenAI packages!
+The SwiftOpenIA package has the major advantage that it supports streaming responses.
+
+
 The relevant interaction code for OpenAISwift is in [OpenAISwiftComic](https://github.com/Chat-Defender/ChatDefender-iOS-MacOS-demo/blob/main/ChatDefenderDemo/SDKs/OpenAISwiftComic.swift)
 
 ```
@@ -50,3 +54,51 @@ struct OpenAISwiftComic {
     }
 }
 ```
+
+The code for SwiftOpenAI is marginally more complex, but still straightforward [SwiftOpenAIComic]https://github.com/Chat-Defender/ChatDefender-iOS-MacOS-demo/blob/main/ChatDefenderDemo/SDKs/SwiftOpenAIComic.swift
+
+
+```
+
+struct SwiftOpenAIComic {
+    
+    static func fetchJoke(subject:String) -> AsyncStream<String> {
+        let openAI = SwiftOpenAI(apiKey: Config.key)
+        
+        let messages: [MessageChatGPT] = [
+          MessageChatGPT(role: .user,
+                         cdContent: CDMessage(key: "substitute_joke",
+                                              variables: ["subject" : subject])
+                        )
+        ]
+        
+        let optionalParameters = ChatCompletionsOptionalParameters(stream: true)
+
+ 
+        return AsyncStream<String> {
+            continuation in
+            Task {
+                do {
+                    let stream = try await openAI.createChatCompletionsStream(model: .gpt3_5(.turbo),
+                                                                              messages: messages,
+                                                                              optionalParameters: optionalParameters)
+                    
+                    for try await response in stream {
+                        if let delta = response.choices.first?.delta?.content {
+                            continuation.yield(delta)
+                        }
+                    }
+                    continuation.finish()
+                } catch {
+                    print("Error: \(error)")
+                    continuation.finish()
+                }
+            }
+        }
+    }
+}
+
+```
+
+
+
