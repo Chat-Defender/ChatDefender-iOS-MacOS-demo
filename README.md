@@ -59,7 +59,7 @@ struct OpenAISwiftComic {
 
 ### SwiftOpenAI
 
-The code for SwiftOpenAI is marginally more complex, but still straightforward [SwiftOpenAIComic]https://github.com/Chat-Defender/ChatDefender-iOS-MacOS-demo/blob/main/ChatDefenderDemo/SDKs/SwiftOpenAIComic.swift
+The code for SwiftOpenAI is marginally more complex, but still straightforward [SwiftOpenAIComic](https://github.com/Chat-Defender/ChatDefender-iOS-MacOS-demo/blob/main/ChatDefenderDemo/SDKs/SwiftOpenAIComic.swift)
 
 
 ```
