@@ -30,6 +30,8 @@ The app demonstrates using the OpenAISwift and the SwiftOpenAI packages!
 The SwiftOpenIA package has the major advantage that it supports streaming responses.
 
 
+### OpenAISwift
+
 The relevant interaction code for OpenAISwift is in [OpenAISwiftComic](https://github.com/Chat-Defender/ChatDefender-iOS-MacOS-demo/blob/main/ChatDefenderDemo/SDKs/OpenAISwiftComic.swift)
 
 ```
@@ -54,6 +56,8 @@ struct OpenAISwiftComic {
     }
 }
 ```
+
+### SwiftOpenAI
 
 The code for SwiftOpenAI is marginally more complex, but still straightforward [SwiftOpenAIComic]https://github.com/Chat-Defender/ChatDefender-iOS-MacOS-demo/blob/main/ChatDefenderDemo/SDKs/SwiftOpenAIComic.swift
 
