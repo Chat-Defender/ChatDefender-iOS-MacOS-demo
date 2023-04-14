@@ -9,27 +9,46 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State private var subject:String = ""
+    @State private var subject:String = "Cucumbers"
     @MainActor
     @State private var processing:Bool = false
     @MainActor
-    @State private var joke:String? = nil
+    @State private var joke:String = ""
     
     var body: some View {
-        VStack {
-            if let joke {
-                Text(joke)
-            }
+        VStack(spacing:20) {
+
+            Text(joke)
             
             TextField("Joke Subject", text: $subject)
                 .padding()
                 .border(.gray)
             
             Button {
-                getJoke()
+                getJokeOpenAISwift()
             } label: {
-                Text(joke == nil ? "Tell me a Joke" : "Tell Another !")
+                VStack {
+                    Text("OpenAISwift")
+                        .font(.footnote)
+                        .foregroundColor(.gray)
+                    Text(joke.isEmpty ? "Tell me a Joke" : "Tell Another !")
+                }
             }
+            .padding()
+            .border(.gray)
+            
+            Button {
+                getJokeSwiftOpenAI()
+            } label: {
+                VStack {
+                    Text("SwiftOpenAI")
+                        .font(.footnote)
+                        .foregroundColor(.gray)
+                    Text(joke.isEmpty ? "Tell me a Joke" : "Tell Another !")
+                }
+            }
+            .padding()
+            .border(.gray)
             
         }
         .disabled(processing)
@@ -40,16 +59,28 @@ struct ContentView: View {
             }
         }
     }
+      
     
     @MainActor
-    func getJoke() {
-          
+    func getJokeOpenAISwift() {     
         processing = true
         Task {
-            joke = await OpenAISwiftComic.fetchJoke(subject: subject)
+            joke = await OpenAISwiftComic.fetchJoke(subject: subject) ?? ""
             processing = false
         }
-
+    }
+    
+    @MainActor
+    //SwiftOpenAI supports streaming responses
+    func getJokeSwiftOpenAI() {
+        processing = true
+        joke = ""
+        Task {
+            for await part in SwiftOpenAIComic.fetchJoke(subject: subject) {
+                joke = joke + part
+            }
+            processing = false
+        }
     }
 }
 

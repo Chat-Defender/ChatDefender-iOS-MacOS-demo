@@ -14,6 +14,8 @@
 		D424BBFE29C9C4AA006B6BF6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D424BBFD29C9C4AA006B6BF6 /* Config.swift */; };
 		D424BC0429C9C699006B6BF6 /* OpenAISwiftComic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D424BC0329C9C699006B6BF6 /* OpenAISwiftComic.swift */; };
 		D424BC0A29CC7ACC006B6BF6 /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = D424BC0929CC7ACC006B6BF6 /* OpenAISwift */; };
+		D4F58FAE29E952F4002C40B4 /* SwiftOpenAIComic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F58FAD29E952F4002C40B4 /* SwiftOpenAIComic.swift */; };
+		D4F58FD329E9AF6D002C40B4 /* SwiftOpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = D4F58FD229E9AF6D002C40B4 /* SwiftOpenAI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +28,7 @@
 		D424BBFD29C9C4AA006B6BF6 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		D424BC0329C9C699006B6BF6 /* OpenAISwiftComic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAISwiftComic.swift; sourceTree = "<group>"; };
 		D424BC0B29CC7B2A006B6BF6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		D4F3002029CDBB77004DDE45 /* OpenAISwift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = OpenAISwift; path = ../../Packages/OpenAISwift; sourceTree = "<group>"; };
+		D4F58FAD29E952F4002C40B4 /* SwiftOpenAIComic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftOpenAIComic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4F58FD329E9AF6D002C40B4 /* SwiftOpenAI in Frameworks */,
 				D424BC0A29CC7ACC006B6BF6 /* OpenAISwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -44,7 +47,6 @@
 		D424BBE029C8DB51006B6BF6 = {
 			isa = PBXGroup;
 			children = (
-				D4F3002029CDBB77004DDE45 /* OpenAISwift */,
 				D424BBEB29C8DB51006B6BF6 /* ChatDefenderDemo */,
 				D424BBEA29C8DB51006B6BF6 /* Products */,
 				D424BBFF29C9C64A006B6BF6 /* Frameworks */,
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				D424BC0329C9C699006B6BF6 /* OpenAISwiftComic.swift */,
+				D4F58FAD29E952F4002C40B4 /* SwiftOpenAIComic.swift */,
 			);
 			path = SDKs;
 			sourceTree = "<group>";
@@ -115,6 +118,7 @@
 			name = ChatDefenderDemo;
 			packageProductDependencies = (
 				D424BC0929CC7ACC006B6BF6 /* OpenAISwift */,
+				D4F58FD229E9AF6D002C40B4 /* SwiftOpenAI */,
 			);
 			productName = ChatDefenderDemo;
 			productReference = D424BBE929C8DB51006B6BF6 /* ChatDefenderDemo.app */;
@@ -146,6 +150,7 @@
 			mainGroup = D424BBE029C8DB51006B6BF6;
 			packageReferences = (
 				D424BC0829CC7ACC006B6BF6 /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+				D4F58FD129E9AF6D002C40B4 /* XCRemoteSwiftPackageReference "SwiftOpenAI" */,
 			);
 			productRefGroup = D424BBEA29C8DB51006B6BF6 /* Products */;
 			projectDirPath = "";
@@ -176,6 +181,7 @@
 				D424BBEF29C8DB51006B6BF6 /* ContentView.swift in Sources */,
 				D424BC0429C9C699006B6BF6 /* OpenAISwiftComic.swift in Sources */,
 				D424BBED29C8DB51006B6BF6 /* ChatDefenderDemoApp.swift in Sources */,
+				D4F58FAE29E952F4002C40B4 /* SwiftOpenAIComic.swift in Sources */,
 				D424BBFE29C9C4AA006B6BF6 /* Config.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +406,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		D4F58FD129E9AF6D002C40B4 /* XCRemoteSwiftPackageReference "SwiftOpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Chat-Defender/SwiftOpenAI.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -407,6 +421,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D424BC0829CC7ACC006B6BF6 /* XCRemoteSwiftPackageReference "OpenAISwift" */;
 			productName = OpenAISwift;
+		};
+		D4F58FD229E9AF6D002C40B4 /* SwiftOpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4F58FD129E9AF6D002C40B4 /* XCRemoteSwiftPackageReference "SwiftOpenAI" */;
+			productName = SwiftOpenAI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
